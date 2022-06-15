@@ -12,7 +12,7 @@ public:
 
     Product(const ProductInfo &info) : m_product_info(info) {}
 
-    Product(const Product &pr) : m_product_info(pr.m_product_info) {}
+    Product(const Product &pr) : m_product_info(pr.m_product_info) {} //конструктор копирования
 
     virtual std::string get_info() const {
         return "default product";
