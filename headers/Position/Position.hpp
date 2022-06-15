@@ -8,20 +8,20 @@
 
 class Position {
 public:
-    Position(const Product &product) : m_ptr_product(nullptr) {}
+    Position(const Product &product)noexcept  : m_ptr_product(nullptr) {}
 
     virtual ~Position() {
     }
 
-    Product *get_ptr_product() {
+    Product *get_ptr_product() noexcept {
         return m_ptr_product;
     }
 
-    virtual double get_cost() const {
+    virtual double get_cost() const noexcept {
         return 0;
     }
 
-    virtual double get_quantity() const {
+    virtual double get_quantity() const noexcept {
         return 0;
     }
 

@@ -8,7 +8,7 @@
 
 class WeightPosition : public Position {
 public:
-    WeightPosition(const WeightProduct &w_p, double weight) : Position(Product()), m_weight(weight) {
+    WeightPosition(const WeightProduct &w_p, double weight) noexcept: Position(Product()), m_weight(weight) {
         m_ptr_product = new WeightProduct(w_p);
     }
 
@@ -16,11 +16,11 @@ public:
         delete m_ptr_product;
     }
 
-    double get_cost() const override {
+    double get_cost() const noexcept override {
         return (m_ptr_product->get_cost() * m_weight);
     }
 
-    double get_quantity() const override {
+    double get_quantity() const noexcept override {
         return m_weight;
     }
 
