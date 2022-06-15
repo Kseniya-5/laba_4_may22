@@ -2,6 +2,7 @@
 
 #include "Weight_Product.hpp"
 #include "Amount_Product.hpp"
+#include <iostream>
 
 #ifndef LABA_4_MAY22_POSITION_HPP
 #define LABA_4_MAY22_POSITION_HPP
@@ -10,8 +11,7 @@ class Position {
 public:
     Position(const Product &product) noexcept: m_ptr_product(nullptr) {}
 
-    ~Position() {
-    }
+    virtual ~Position() {}
 
     Product *get_ptr_product() noexcept {
         return m_ptr_product;

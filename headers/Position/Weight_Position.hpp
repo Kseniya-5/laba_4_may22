@@ -12,7 +12,7 @@ public:
         m_ptr_product = new WeightProduct(w_p);
     }
 
-    ~WeightPosition() {
+    ~WeightPosition() override{
         delete m_ptr_product;
     }
 
