@@ -10,9 +10,9 @@ class ProductInfo {
 public:
     ProductInfo() {}
 
-    ProductInfo(const std::string &info) : m_info(info) {}
+    ProductInfo(const std::string &info) noexcept: m_info(info) {}
 
-    std::string get_info() const {
+    std::string get_info() const noexcept {
         return m_info;
     }
 
