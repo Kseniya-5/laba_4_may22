@@ -14,7 +14,7 @@ public:
         clear();
     }
 
-    void add_position(Position *pos) {
+    void add_position(Position *pos) noexcept {
         bool f = true;
         for (size_t i = 0; i < m_ptr_positions.size(); ++i) {
             if (m_ptr_positions[i]->get_ptr_product()->get_info() == pos->get_ptr_product()->get_info()) {
@@ -29,7 +29,7 @@ public:
         }
     }
 
-    double get_cost() {
+    double get_cost() noexcept {
         double res = 0;
         for (auto pos: m_ptr_positions) {
             res += pos->get_cost();
@@ -37,7 +37,7 @@ public:
         return res;
     }
 
-    void get_info() {
+    void get_info() noexcept {
         for (auto &pos: m_ptr_positions) {
             std::cout << pos->get_ptr_product()->get_info() << std::endl;
             std::cout << "Quantity : " << pos->get_quantity() << std::endl;
@@ -46,14 +46,14 @@ public:
         std::cout << "Total cost : " << get_cost() << std::endl;
     }
 
-    bool empty() {
+    bool empty() noexcept {
         return m_ptr_positions.empty();
     }
 
     friend class Client;
 
 private:
-    void clear() {
+    void clear() noexcept {
         if (m_ptr_positions.empty()) {
             return;
         }
