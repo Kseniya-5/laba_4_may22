@@ -8,9 +8,9 @@
 
 class Position {
 public:
-    Position(const Product &product)noexcept  : m_ptr_product(nullptr) {}
+    Position(const Product &product) noexcept: m_ptr_product(nullptr) {}
 
-    virtual ~Position() {
+    ~Position() {
     }
 
     Product *get_ptr_product() noexcept {

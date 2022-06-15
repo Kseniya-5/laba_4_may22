@@ -13,7 +13,7 @@ public:
         m_ptr_product = new AmountProduct(a_p);
     }
 
-    ~AmountPosition() override {
+    ~AmountPosition() {
         delete m_ptr_product;
     }
 
