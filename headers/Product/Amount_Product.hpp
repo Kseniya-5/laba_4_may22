@@ -8,9 +8,9 @@
 
 class AmountProduct : public Product {
 public:
-    AmountProduct(const ProductInfo &info, double cost) : Product(info), m_cost_per_one(cost) {}
+    AmountProduct(const ProductInfo &info, double cost) noexcept: Product(info), m_cost_per_one(cost) {}
 
-    AmountProduct(const AmountProduct &w_p) : Product(w_p.m_product_info), m_cost_per_one(w_p.m_cost_per_one) {}
+    AmountProduct(const AmountProduct &w_p) noexcept: Product(w_p.m_product_info), m_cost_per_one(w_p.m_cost_per_one) {}
 
     double get_cost() const noexcept override {
         return m_cost_per_one;
