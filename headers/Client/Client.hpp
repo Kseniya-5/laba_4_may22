@@ -7,7 +7,7 @@
 
 class Client {
 public:
-    void earn_money(double money) noexcept {
+    void earn_money(double money)  {
         m_balance.add_money(money);
     }
 
