@@ -16,10 +16,11 @@ public:
     }
 
     WeightProduct get_product_weight_price(const std::string &name) const{
-        if (m_products_weight_price.count(name) == 0) {
+        auto it = m_products_weight_price.find(name);
+        if (m_products_weight_price.end() == it) {
             throw std::invalid_argument("Incorrect name of product");
         }
-        return m_products_weight_price.at(name);
+       return it->second;
     }
 
     AmountProduct get_product_amount_price(const std::string &name) const{

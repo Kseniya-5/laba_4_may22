@@ -9,13 +9,7 @@
 
 class AmountPosition : public Position {
 public:
-    AmountPosition(const AmountProduct &a_p, size_t amount) : Position(Product()), m_amount(amount) {
-        m_ptr_product = new AmountProduct(a_p);
-    }
-
-    ~AmountPosition() override {
-        delete m_ptr_product;
-    }
+    AmountPosition(const AmountProduct &a_p, size_t amount) : Position(a_p), m_amount(amount) {}
 
     double get_cost() const noexcept override {
         return (m_ptr_product->get_cost() * get_quantity());

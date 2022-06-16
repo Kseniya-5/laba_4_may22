@@ -8,7 +8,6 @@
 
 class Product {
 public:
-    Product() {}
 
     Product(const ProductInfo &info) noexcept: m_product_info(info) {}
 
@@ -23,7 +22,7 @@ public:
     }
 
 protected:
-    ProductInfo m_product_info;
+    const ProductInfo& m_product_info;
 };
 
 #endif //LABA_4_MAY22_PRODUCT_HPP
