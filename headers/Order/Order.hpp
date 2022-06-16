@@ -15,18 +15,14 @@ public:
     }
 
     void add_position(Position *pos) noexcept {
-        bool f = true;
         for (size_t i = 0; i < m_ptr_positions.size(); ++i) {
             if (m_ptr_positions[i]->get_ptr_product()->get_info() == pos->get_ptr_product()->get_info()) {
                 delete m_ptr_positions[i];
                 m_ptr_positions[i] = pos;
-                f = false;
-                break;
+                return;
             }
         }
-        if (f) {
-            m_ptr_positions.push_back(pos);
-        }
+        m_ptr_positions.push_back(pos);
     }
 
     double get_cost() noexcept {
