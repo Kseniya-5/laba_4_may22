@@ -33,6 +33,9 @@ private:
         }
 
         void add_money(double money) {
+            if (money < 0){
+                throw std::invalid_argument{"Incorrect count of money"};
+            }
             m_money += money;
         }
 
