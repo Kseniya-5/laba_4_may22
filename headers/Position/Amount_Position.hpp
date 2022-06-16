@@ -9,11 +9,11 @@
 
 class AmountPosition : public Position {
 public:
-    AmountPosition(const AmountProduct &a_p, size_t amount) noexcept: Position(Product()), m_amount(amount) {
+    AmountPosition(const AmountProduct &a_p, size_t amount) : Position(Product()), m_amount(amount) {
         m_ptr_product = new AmountProduct(a_p);
     }
 
-    ~AmountPosition() override{
+    ~AmountPosition() override {
         delete m_ptr_product;
     }
 
