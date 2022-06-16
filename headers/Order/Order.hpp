@@ -56,8 +56,7 @@ private:
         for (auto p: m_ptr_positions) {
             delete p;
         }
-        m_ptr_positions.clear(); // после удаления элементов в векторе по указателям его размер надо в 0
-        // перенести(чтобы работал деструктор нормально и не было двойного освобождения памяти)
+        m_ptr_positions.clear();
     }
 
     std::vector<Position *> m_ptr_positions;
