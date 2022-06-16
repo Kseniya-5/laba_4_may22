@@ -25,7 +25,7 @@ public:
         m_ptr_positions.push_back(pos);
     }
 
-    double get_cost() noexcept {
+    double get_cost() const noexcept {
         double res = 0;
         for (auto pos: m_ptr_positions) {
             res += pos->get_cost();
@@ -33,7 +33,7 @@ public:
         return res;
     }
 
-    void get_info() noexcept {
+    void get_info() const noexcept {
         for (auto &pos: m_ptr_positions) {
             std::cout << pos->get_ptr_product()->get_info() << std::endl;
             std::cout << "Quantity : " << pos->get_quantity() << std::endl;
@@ -42,7 +42,7 @@ public:
         std::cout << "Total cost : " << get_cost() << std::endl;
     }
 
-    bool empty() noexcept {
+    bool empty()const noexcept {
         return m_ptr_positions.empty();
     }
 

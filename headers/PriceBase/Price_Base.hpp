@@ -15,14 +15,14 @@ public:
         return a;
     }
 
-    WeightProduct get_product_weight_price(const std::string &name) {
+    WeightProduct get_product_weight_price(const std::string &name) const{
         if (m_products_weight_price.count(name) == 0) {
             throw std::invalid_argument("Incorrect name of product");
         }
         return m_products_weight_price.at(name);
     }
 
-    AmountProduct get_product_amount_price(const std::string &name) {
+    AmountProduct get_product_amount_price(const std::string &name) const{
         if (m_products_amount_price.count(name) == 0) {
             throw std::invalid_argument("Incorrect name of product");
         }
@@ -30,7 +30,7 @@ public:
     }
 
 protected:
-    PriceBase() {
+    PriceBase(){
         m_products_info = {
                 {"Apple",  ProductInfo("Green sweet apple")},
                 {"Nuts",   ProductInfo("Macadamia nut")},
