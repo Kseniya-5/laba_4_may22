@@ -12,7 +12,7 @@ public:
 
     ProductInfo(const std::string &info) noexcept: m_info(info) {}
 
-    std::string get_info() const noexcept {
+    const std::string & get_info() const noexcept {
         return m_info;
     }
 
